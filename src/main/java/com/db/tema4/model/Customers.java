@@ -1,5 +1,6 @@
 package com.db.tema4.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import lombok.*;
 
@@ -10,11 +11,12 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Customer {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Customers {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @NotNull
     private String username;

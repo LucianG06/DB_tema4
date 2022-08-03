@@ -1,5 +1,6 @@
 package com.db.tema4.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,11 +13,12 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Orders {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @NotNull
     private Date orderDate;
@@ -29,5 +31,5 @@ public class Orders {
     private String comments;
 
     @NotNull
-    private int customerId;
+    private Integer customerId;
 }
